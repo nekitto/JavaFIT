@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.obrii.mit.dp2021.sitar</groupId>
-    <artifactId>mavenproject2</artifactId>
+    <artifactId>SitarProject</artifactId>
     <version>1</version>
     <packaging>war</packaging>
 
-    <name>mavenproject2</name>
+    <name>SitarProject</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

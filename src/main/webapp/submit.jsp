@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%@page import="org.obrii.mit.dp2021.sitar.mavenproject2.User"  %>
+<%@page import="org.obrii.mit.dp2021.sitar.sitarproject.User"  %>
 <!DOCTYPE html>
 <html>
     <head>

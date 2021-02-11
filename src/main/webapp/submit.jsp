@@ -48,7 +48,7 @@
 </ul>        
     </div>
       <div class="row">
-            <input type="submit" value="Back" class="btn btn-danger" />
+            <input type="submit" value="Back" class="btn btn-outline-danger" />
       </div>
           </form>
 </div>

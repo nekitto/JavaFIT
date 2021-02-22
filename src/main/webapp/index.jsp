@@ -15,14 +15,24 @@
         <title>Landing Page</title>
     </head>
     <body>
-        <div class="container">
+        
 
-            <h1>Leave your feedback in the form below to help us to improve our software!</h1>
+
 
         <form action="<%=request.getContextPath()%>/form" method="get">
-            
-            <input type="submit" class="btn btn-outline-primary" value="To form"/>        
-        </form>
+        <div class="container">
+          <div class="row"> 
+               <h1>Leave your feedback in the form below to help us to improve our software!</h1>
+          </div>
+          <div class="row"> 
+               <input type="submit" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="left" title="Tooltip on bottom" value="To form"/>
+          </div>
+          <div class="row"> 
+               <img src="img/Untitled.png" alt="scheme">
+          </div>
         </div>
+            
+        
+        </form>
     </body>
 </html>

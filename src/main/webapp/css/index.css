@@ -13,3 +13,9 @@ body
     text-align: center; 
     font-size: 75%;
 }
+
+.container
+{
+    height : 100%;
+    width : 100%;
+}

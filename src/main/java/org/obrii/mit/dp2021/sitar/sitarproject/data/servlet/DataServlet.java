@@ -5,13 +5,16 @@
  */
 package org.obrii.mit.dp2021.sitar.sitarproject.data.servlet;
 
+import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.obrii.mit.dp2021.sitar.sitarproject.data.Data;
+import org.obrii.mit.dp2021.sitar.sitarproject.files.Config;
 import org.obrii.mit.dp2021.sitar.sitarproject.storeHouse.DataCrudInterface;
+import org.obrii.mit.dp2021.sitar.sitarproject.files.FilesCrud;
 import org.obrii.mit.dp2021.sitar.sitarproject.storeHouse.StoreCrud;
 
 /**
@@ -19,8 +22,8 @@ import org.obrii.mit.dp2021.sitar.sitarproject.storeHouse.StoreCrud;
  * @author meekeetka
  */
 public class DataServlet extends HttpServlet {
-    DataCrudInterface dataCrud = new StoreCrud();
-
+    DataCrudInterface dataCrud = new FilesCrud(new File(Config.getFileName()));
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -44,6 +47,13 @@ public class DataServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+                if (Config.getFileName().equals("")) {
+            Config.setFileName(this.getServletContext().getRealPath("") + "data.txt");
+            dataCrud = new FilesCrud(new File(Config.getFileName()));
+        }
+        
+        
         
         request.setAttribute("data", dataCrud.readData());
         request.getRequestDispatcher("home.jsp").forward(request, response);

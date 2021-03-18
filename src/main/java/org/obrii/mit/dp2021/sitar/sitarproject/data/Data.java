@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package org.obrii.mit.dp2021.sitar.sitarproject.data;
-
+import java.io.Serializable;
+import java.util.Arrays;
 /**
  *
  * @author meekeetka
  */
-public class Data {
+public class Data implements Serializable  {
     private int id;
     private String name;
     private int age;

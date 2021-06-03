@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.obrii.fit.mit.Kulbachinskiy.Domain;
+package org.obrii.fit.mit.kulbaProject.Domain;
 
-import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +12,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-public class User implements Serializable {
+public class User {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,9 +23,19 @@ public class User implements Serializable {
     
     @NotBlank(message = "Email is mandatory")
     private String email;
-    
-    private int age;
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
     public long getId() {
         return id;
     }
@@ -38,38 +47,13 @@ public class User implements Serializable {
     public String getEmail() {
         return email;
     }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
     
-    public User() {
-    }
-
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("User{id=").append(id);
-        sb.append(", name=").append(name);
-        sb.append(", email=").append(email);
-        sb.append(", age=").append(age);
-        sb.append('}');
-        return sb.toString();
+        return "User{" + "id=" + id + ", name=" + name + ", email=" + email + '}';
+    }
+    
+
+    public User() {
     }
 }

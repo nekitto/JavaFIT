@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.obrii.fit.mit.Kulbachinskiy.Repository;
+package org.obrii.fit.mit.kulbaProject.Repository;
 
-import org.obrii.fit.mit.Kulbachinskiy.Domain.User;
+import org.obrii.fit.mit.kulbaProject.Domain.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

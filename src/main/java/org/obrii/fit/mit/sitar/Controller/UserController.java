@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.obrii.fit.mit.Kulbachinskiy.Controller;
+package org.obrii.fit.mit.kulbaProject.Controller;
 
 import javax.validation.Valid;
-import org.obrii.fit.mit.Kulbachinskiy.Domain.User;
-import org.obrii.fit.mit.Kulbachinskiy.Repository.UserRepository;
+import org.obrii.fit.mit.kulbaProject.Domain.User;
+import org.obrii.fit.mit.kulbaProject.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +20,8 @@ public class UserController {
     
     @Autowired
     UserRepository userRepository;
+    
+    
     
     @GetMapping("/signup")
     public String showSignUpForm(User user) {
@@ -38,7 +40,7 @@ public class UserController {
     @GetMapping("/index")
     public String showUserList(Model model) {
         model.addAttribute("users", userRepository.findAll());
-        
+    
         return "index";
     }
 }
